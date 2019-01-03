@@ -1,0 +1,68 @@
+
+$theme: 'theme-2';
+
+// colors
+$black: #000000;
+$white: #FFFFFF;
+$faded-grey: #D6D6D6;
+
+// neon colors
+$blue: #0000FF;
+
+// flat colors
+$pink: #f34d57;
+$dark-purple: #110630;
+$purple: #34148f;
+
+
+
+// nature colors
+$rosa: #DEA189;
+$dark-green: #69847B;
+$light-green: #C6DFD4;
+
+
+$color-1: '';
+$color-2: '';
+$color-3: '';
+
+@if $theme == 'theme-1'{
+	$color-1: $rosa;
+	$color-2: $dark-green;
+	$color-3: $light-green;
+}
+
+@if $theme == 'theme-2'{
+	$color-1: $dark-purple;
+	$color-2: $pink;
+	$color-3: $purple;
+}
+
+
+
+
+
+
+// font
+$font-basic: 'Roboto', sans-serif;;
+
+
+// transition
+$transition-ease: all 0.2s ease-in-out;
+
+
+// blend mode
+$image-blend: luminosity;
+
+
+// box shadow
+$back-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.1);
+$front-shadow: 0 58px 116px 0 rgba(0,0,0,.18);
+$shadow: 0 5px 20px 0 rgba(0,0,0,0.05);
+
+
+// screen size
+$small-screen: 800px;
+$medium-screen: 1024px;
+$large-screen: 1280px;
+$x-large-screen: 1600px;

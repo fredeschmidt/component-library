@@ -1,0 +1,47 @@
+
+
+.btn{
+    font-family: $font-basic; 
+    font-size: 12px;  
+    line-height: 19px;   
+    font-weight: bold;   
+    text-align: center;
+    text-transform: uppercase;
+    white-space: normal;
+    cursor: pointer;
+    transition: $transition-ease;
+
+    background-color: $color-2;
+    color: $white;
+
+    &:focus{
+        box-shadow: none;
+    }
+
+    &--rounded{
+        height: 40px;   
+        width: 100%; 
+        padding-top: 10px;
+        border-radius: 70px;
+        box-shadow: $back-shadow;
+
+        transform: scale(1);
+        transition: $transition-ease;
+
+        &:hover {
+            text-decoration: none;
+            color: rgba(255,255,255,0.9);
+            transform: scale(1.03);
+        }
+
+        @media (max-width: $medium-screen) {  
+            width: 220px;
+        }
+    }
+}
+
+
+
+
+
+

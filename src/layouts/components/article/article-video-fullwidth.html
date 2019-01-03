@@ -1,0 +1,24 @@
+
+<!-- VIDEO FULLWIDTH -->
+   
+<div class="media-article">
+    <div class="btn btn--play" data-toggle="modal" data-target="#article-video-2" data-iframe="iframe-1" onclick="sendCommandToPlayer('play', this.getAttribute('data-iframe'))">
+        <img src="assets/images/icons/play.svg" alt="play">
+    </div>
+    <img src="assets/images/demo/grey.png" alt="video" data-toggle="modal" data-target="#article-video-2">
+</div> 
+
+<!-- pop up article-video-2 -->
+<div class="modal fade" id="article-video-2" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <i class="icon-close"></i>
+            </button>
+
+            <iframe id="iframe-1" title="Videotool player" type="text/html" src="https://media.videotool.dk/?vn=246_2016051009415732995238289815" allowfullscreen="" frameborder="0"></iframe>
+
+        </div>
+    </div>
+</div>

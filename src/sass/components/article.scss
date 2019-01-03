@@ -1,0 +1,199 @@
+
+article{
+    color: $black;
+    background-color: $white;
+    padding-top: 100px;
+    paddin-bottom: 100px;
+
+    .article-sidebox{
+        margin-left: 100px;
+
+        @media (max-width: $small-screen) {   
+            margin-left: 0px;
+            margin-bottom: 50px;
+        }
+
+        .small-note{
+            text-align: right;
+        }
+    }
+
+    .article-body{
+        h1{
+            @media (max-width: $small-screen) {   
+                font-size: 30px;    
+                font-style: italic; 
+                font-weight: bold;  
+                line-height: 36px;
+            }
+        }
+        h2{
+            margin-top: 70px;
+            margin-bottom: 20px;
+            color: $black;
+            font-family: $font-basic; 
+            font-size: 26px;    
+            font-weight: bold; 
+            font-style: normal;  
+            line-height: 32px;
+
+            @media (max-width: $medium-screen) {  
+                margin-top: 50px;
+                margin-bottom: 10px;  
+                font-size: 20px; 
+                line-height: 26px;
+            }
+        }
+
+        h3{
+            margin-top: 80px;
+            margin-bottom: 20px;
+            color: $black;
+            font-family: $font-basic; 
+            font-size: 20px; 
+            font-weight: bold;  
+            font-style: normal; 
+            line-height: 26px;
+
+            @media (max-width: $medium-screen) {   
+                margin-top: 60px;
+                margin-bottom: 10px;  
+                font-size: 18px; 
+                line-height: 24px;
+            }
+        }
+    }
+
+
+
+
+    // ELEMENTS IN ARTICLE
+    .media-article{
+        margin-top: 70px;
+        margin-bottom: 50px;
+        width: 100%;
+
+        img{
+            width: 100%;
+        }    
+
+        @media (max-width: $small-screen) {   
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+
+
+        &--bg{
+            height: 300px;
+            background-size: cover !important;
+            background-position: center center;
+            background-repeat: no-repeat !important;
+
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+    }
+
+    .article-photo-text{
+        padding: 20px 40px 20px 40px;
+        border-bottom: 1px solid $faded-grey;
+
+        p{
+            font-size: 14px;
+            line-height: 20px;
+            margin-bottom: 0;
+        }
+
+        .article-photo-text_author{
+            text-align: right;
+        }
+    }
+
+
+    a{
+        transition: $transition-ease;
+        p{
+            color: $black;
+        }
+
+        &:hover{
+            text-decoration: none;
+
+            .subheading{
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+
+
+
+// BODY CLASS
+.article{
+    background-color: $white;
+
+    .header{
+        height: 100px;
+        @media (max-width: $small-screen) {   
+            height: 120px;
+        }
+
+        .header_content{
+            #menu-toggle{
+                input{
+                    &:checked ~ span{
+                        background: $white;
+                    }
+                }
+                span{
+                    background: $black;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+.social-share{
+    
+    small{
+        display: block;
+        @media (max-width: $medium-screen) {  
+            margin-top: 20px;
+        }
+    }
+
+    a{
+        display: block;
+    }
+
+    .share{
+        height: 68px;   
+        width: 68px;    
+        border: 1px solid $black;
+        text-align: center;
+        padding: 20px;
+
+        @media (max-width: $medium-screen) {  
+            display: inline-block;
+        }
+
+        &:first-of-type{
+            margin-top: 20px;
+            border-bottom: 0px;
+
+            @media (max-width: $medium-screen) {  
+                border-bottom: 1px solid $black;
+            }
+        }
+
+        a{
+            display: block;
+            color: $black;
+            font-size: 20px;
+        }
+    }
+}

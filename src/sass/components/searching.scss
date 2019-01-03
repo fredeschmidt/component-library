@@ -1,0 +1,411 @@
+
+
+// @media (max-width: $small-screen) {
+//     .hide_label {
+//       .tabmodule__label {
+//           display:none;
+//       }
+//     }
+
+//     .tabmodule__toggle:checked + .tabmodule__label{
+//       z-index: 100;
+//       display:block !important;
+//     }
+// }
+
+
+.search{
+    
+    // content
+    .tabmodule{
+        position: relative;
+
+        // soege felt
+        .search-field{
+            i{
+                position: absolute;
+                z-index: 100;
+                top: 15px;
+                right: 15px;
+                font-size: 25px;
+            }
+            #search-autocomplete{
+                width: 100%;
+                left: 0;
+            }
+        }
+        
+        // tabs (radio buttons) - on click open tabs
+        .tabmodule__toggle{
+          display: none;
+        }
+        .tabmodule__toggle:nth-of-type(1):checked ~ #all-content-largescreen .tabmodule__content:nth-of-type(1) {
+          display: table;
+        }
+        .tabmodule__toggle:nth-of-type(2):checked ~ #all-content-largescreen .tabmodule__content:nth-of-type(2) {
+          display: table;
+        }
+        .tabmodule__toggle:nth-of-type(3):checked ~ #all-content-largescreen .tabmodule__content:nth-of-type(3) {
+          display: table;
+        }
+        .tabmodule__toggle:nth-of-type(4):checked ~ #all-content-largescreen .tabmodule__content:nth-of-type(4) {
+          display: table;
+        }
+        .tabmodule__toggle:nth-of-type(5):checked ~ #all-content-largescreen .tabmodule__content:nth-of-type(5) {
+          display: table;
+        }
+
+
+        .tabmodule__toggle:nth-of-type(1):checked ~ .tabmodule__content:nth-of-type(1) {
+          display: table;
+        }
+        .tabmodule__toggle:nth-of-type(2):checked ~ .tabmodule__content:nth-of-type(2) {
+          display: table;
+        }
+        .tabmodule__toggle:nth-of-type(3):checked ~ .tabmodule__content:nth-of-type(3) {
+          display: table;
+        }
+        .tabmodule__toggle:nth-of-type(4):checked ~ .tabmodule__content:nth-of-type(4) {
+          display: table;
+        }
+        .tabmodule__toggle:nth-of-type(5):checked ~ .tabmodule__content:nth-of-type(5) {
+          display: table;
+        }
+
+
+        // tabs heade (label)
+        .tabmodule__label{
+            height: 50px;
+            padding: 12px 20px 0px 20px;
+            position: absolute;
+            float: left;
+
+            @include text-label;
+            cursor: pointer;
+            background-color: $color-2;
+         
+            transition: $transition-ease;
+
+            i{
+                float: right;
+                padding-top: 5px;
+            }
+
+            // @media (max-width: $small-screen) {
+            //     width: 100%;
+            //     margin: 0;
+            //     text-align: left;
+            //     border: none;
+            //     border-radius: 0;
+            //     width: 100%;
+            //     margin-left: 0px !important;
+            //     font-size: 16px;
+            //     padding: 15px 20px 0px 20px;
+            //     position: relative;
+            //     margin-top: 10px;
+            // }
+        }
+
+
+        // .tabmodule__toggle:checked + .tabmodule__label, .tabmodule__label.active, .tabmodule__toggle:checked + span .tabmodule__label{
+        //     @media (max-width: $small-screen) {
+        //         height: auto;
+        //     }
+        // }
+        
+
+        // indhold i tabs
+        .tabmodule__content{
+            display: none;
+            width: 100%;
+            padding-top: 0px;
+            background-color: $color-3;
+            border: none;
+
+            // accordion
+            .accordion{
+                background: $color-3;
+
+                ul{
+                    margin: 0;
+                    padding: 0;
+                    border: none;
+                    
+                    li{
+                        position: relative;
+                        min-height: 35px;
+                        padding-left: 0;
+                        border-top: 1px solid $color-2;
+                        background-color: $color-3;
+                        overflow: hidden;
+
+                        input{
+                            position: absolute;
+                            opacity: 0;
+                            z-index: -1;
+
+                            &[type="checkbox"] + label{
+                                margin-right: 0px !important;
+                                margin-left: 0px !important;
+                            }
+
+                            &:checked ~ .tab__content {
+                                max-height: 100%;
+                                &:after {
+                                    display: none;
+                                    
+                                }  
+                            }
+
+                            // + rotate
+                            &:checked ~ label {
+                                border-bottom: 1px solid $color-2;
+                                color: $white;
+
+                                &:before {
+                                    transform: rotate(45deg);
+                                    background-color: white;
+                                }
+
+                                &:after {
+                                    transform: rotate(135deg);
+                                    background-color: white;
+                                } 
+                            }
+                        }
+
+                        label{
+                            display: block;
+                            position: relative;
+                            padding: 7px 50px 7px 30px;
+                            background: $color-3;
+
+                            @include text-label;
+                            
+                            cursor: pointer;
+                            word-break: break-all;
+                            user-select: none;
+                            
+                            transition: $transition-ease;
+                            
+                            @media (max-width: $small-screen) {
+                                padding: 5px 17px 7px 21px;
+                            }
+
+                            // +
+                            &:before,
+                            &:after {
+                                content: '';
+                                width: 2px;
+                                height: 14px;
+                                position: absolute;
+                                top: 50%;
+                                right: 36px;
+                                background-color: $white;
+                                transform-origin: center center;
+                                margin-top: -7px;
+                                transition: all 0.2s ease;
+
+                                @media (max-width: $small-screen) {
+                                    right: 27px;
+                                }
+                            }
+
+                            &:after {
+                                transform: rotateZ(90deg);
+                            }
+
+                            @media (max-width: $small-screen) {
+                                padding: 5px 11px 7px 11px;
+                            }
+
+                            &:before, &:after{
+                                right: 17px;
+                            }
+                        }
+
+                        .tab__content{
+                            max-height: 0;
+                            padding-left: 10px;
+                            padding-right: 10px;
+
+                            background-color: $white;
+
+                            transition: $transition-ease;
+
+                            p {
+                                padding-top: 35px;
+                                padding-left: 22px;
+                                padding-right: 5px;
+
+                                @include normal-text;
+                                color: $black;
+
+                                @media (max-width: $small-screen) {
+                                    padding-left: 10px;
+                                }
+
+                                a{
+                                    margin-bottom: 12px;
+                                    @include bold-text;
+                                    text-decoration: none;
+
+                                    &:hover{
+                                        color: $color-2;
+                                    }
+
+                                    &.accordion-item{
+                                        display: block;
+                                    }
+                                 }
+                             }
+
+                            &__wrapper {
+                                margin-top: -20px;
+                                transition: $transition-ease;
+                             }
+                        }
+                    }
+                }
+            }
+
+            // alfabet
+            ul.letters{
+                position: relative;
+                padding-left: 8px;
+                padding-right: 20px;
+                padding-top: 15px;  
+
+                li{
+                    &.letter{
+                        height: 33px;
+                        list-style: none;
+                        padding-top: 4px;
+                        padding-left: 9px;
+                        padding-right: 9px;
+                        cursor: default;
+                        float: left;
+                        
+                        background-color: none !important;
+
+                        @include bold-text;
+                        color: $black;
+                        opacity: 0.2;
+                        text-align: center;
+
+                        transition: $transition-ease;
+
+                        &.active, &:hover, &:active, &:focus{
+                            outline: none !important;
+                        }
+                    }
+                }
+            }
+
+            .tab__content{
+                .tab__content__wrapper{
+                    &.tab_alphabet{
+                        margin-top: 65px;
+
+                        @media (max-width: $small-screen) {
+                            margin-top: 70px;
+                        }
+
+                        p {
+                            padding-top: 20px;
+                            padding-left: 35px;
+                            padding-right: 5px;
+
+                            @include normal-text;
+                            color: $black;
+
+                            @media (max-width: $small-screen) {
+                                padding-top: 65px;
+                            }
+
+                            a{   
+                                display: block;             
+                                text-decoration: none;
+                                @include normal-text;
+                                
+                                i{
+                                    top: 9px !important;
+                                }
+
+                                &:hover{
+                                    color: theme3('dark1');
+                                }
+
+                                &.accordion-item{
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.split{
+            .search-field{
+                width: 100%;
+            }
+            .tabmodule__label{
+                position: relative;
+                @media (max-width: $small-screen) {
+                   width: 100%;
+                }
+            }
+
+            &--2{
+                .search-field{
+                    width: 50%;
+                    @media (max-width: $small-screen) {
+                       width: 100%;
+                    }
+                }
+                .tabmodule__label{
+                    width: 25%;
+                    @media (max-width: $small-screen) {
+                       width: 100%;
+                    }
+                }
+            }
+            &--3{
+                .tabmodule__label{
+                    width: 33%;
+                    @media (max-width: $small-screen) {
+                       width: 100%;
+                    }
+                }
+            }
+            &--4{
+                .tabmodule__label{
+                    width: 25%;
+                    @media (max-width: $small-screen) {
+                       width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    // links in accordion
+    .page_link .icon-arrow_link{
+        display: inline-block;
+        position: absolute;
+        top: 4px;
+        left: 0;
+        @include normal-text;
+        color: $black !important;
+    }
+
+    .page_link{
+        display: block;
+        position: relative;
+        padding-left: 25px;
+        span{
+            @include normal-text;
+        }
+    } 
+}

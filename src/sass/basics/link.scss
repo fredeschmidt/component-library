@@ -1,0 +1,19 @@
+
+a{
+	&.just-link{
+		position: relative;
+		left: 0;
+
+		@include text-label;
+		color: $white;
+		
+		cursor: pointer;
+		transition: $transition-ease;
+
+		&:hover{
+			left: 5px;
+			color: $white;
+			text-decoration: none;
+		}
+	}
+}

@@ -1,0 +1,218 @@
+
+// input
+input[type=text], 
+input[type=number],
+input[type=date],
+input[type=tel],
+input[type=email],
+input[type=password],
+input[type=url]{ 
+    height: 60px;
+    width: 100%;
+    padding: 15px;
+    background-color: $white;
+    box-shadow: $shadow;
+    border: none;
+    border-bottom: $color-3 solid 2px;
+    transition: $transition-ease;
+
+    color: $color-1; 
+    @include text-label;
+
+
+    &:focus{
+        outline: none;
+    }
+
+    &.valid{
+        border: none;
+        border-bottom: $green solid 2px;
+    }
+
+    &.error{
+        border: none;
+        border-bottom: $red solid 2px;
+    }
+}
+input::placeholder{
+    color: $faded-grey !important; 
+    font-family: $font-basic; 
+    font-size: 16px !important;    
+    line-height: 23px !important;
+}
+// fjerner kryds-ikon i ie
+input::-ms-clear {
+    display: none;
+}
+
+
+
+
+// text area
+textarea{ 
+    height: 145px;
+    width: 100%;
+    padding: 15px;
+    background-color: $white;
+    box-shadow: $shadow;
+    border: none;
+    border-bottom: $color-3 solid 2px !important;
+    resize: none;
+
+    &:focus{
+        outline: none;
+    }
+}
+textarea::placeholder{
+    color: $color-3 !important; 
+    font-family: $font-basic; 
+    font-size: 16px !important;    
+    line-height: 23px !important;
+}
+
+
+
+
+
+
+
+// checkbox
+.checkbox {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+
+    padding-left: 45px;
+    padding-top: 14px;
+    font-family: $font-basic;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: normal;
+
+    
+    /* Hide the browser's default checkbox */
+    input[type=checkbox] {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+
+        &:checked ~ .checkmark {
+            transform: scale(1.04); 
+        }
+
+        &:checked ~ .checkmark:after {
+            display: block;
+        }
+    }
+
+    /* Create a custom checkbox */
+    .checkmark {
+        position: absolute;
+        top: 10px;
+        left: 0px;
+        height: 35px;   
+        width: 35px; 
+        transform: scale(1);
+        transition: $transition-ease;
+
+        &:after {
+            content: "✓";
+            position: absolute;
+            display: none;
+
+            left: 8px;
+            top: 5px;
+            color: $color-3;
+            font-weight: bold;
+            font-size: 25px;
+        }
+    }
+
+    &:hover input ~ .checkmark {
+        transform: scale(1.04);
+        background-color: $color-2;
+    }
+}
+
+
+
+
+
+
+
+// calender
+.datepicker-container{
+    width: 290px;
+    border: none;
+    box-shadow: none;
+
+    &:before, &:after{
+        content: none;
+    }
+
+    .datepicker-panel{
+        background-color: $color-3;
+        ul{
+            width: 100%;
+
+            &:first-of-type{
+                display: flex;
+                justify-content: space-between;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                background-color: $color-2;
+
+                li{
+                    width: auto;
+                    height: 30px;
+                    padding-top: 6px;
+                    border: none;
+                    background-color: $color-2;
+                    @include small-text-bold-uppercase;
+
+                    &:hover {
+                        color: $white;
+                        background-color: $color-2;
+                        border: none;
+                    }
+                }
+            }
+
+            &:nth-of-type(2){
+                li{
+                    @include small-text-bold-uppercase;
+                }
+            }
+            li{
+                width: 40px;
+                height: 37px;
+                padding-top: 7px;
+                border: 2px solid $color-3;
+                background-color: $color-3;
+                @include small-text-bold;
+
+                &.highlighted {
+                    color: $color-2;
+                    background-color: $color-3;
+                    border: 2px solid $color-2;
+                }
+                &.picked {
+                    color: $color-2;
+                    background-color: $color-3;
+                    border: 2px solid $color-2;
+                }
+                &:hover {
+                    color: $color-2;
+                    background-color: $color-3;
+                    border: 2px solid $color-2;
+                }
+
+                &.muted{
+                    color: $white;
+                    opacity: 0.6;
+                }
+            }
+        } 
+    } 
+}

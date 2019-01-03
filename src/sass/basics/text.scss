@@ -1,0 +1,171 @@
+
+@mixin ultra-large-header(){
+	font-family: $font-basic;
+	font-size: 150px;
+	line-height: 100px;
+	font-weight: bold;
+	letter-spacing: 0.47px; 
+
+	@media (max-width: $small-screen) {
+		font-size: 50px;
+		line-height: 50px;
+	}
+}
+
+@mixin large-header(){
+	font-family: $font-basic;
+	font-size: 45px;
+	line-height: 55px;
+	font-weight: bold;
+
+	@media (max-width: $small-screen) {
+		font-size: 30px;
+		line-height: 35px;
+	}
+}
+
+@mixin medium-header(){
+	font-family: $font-basic;
+	font-size: 35px;
+	line-height: 45px;
+	font-weight: bold;
+
+	@media (max-width: $small-screen) {
+		font-size: 20px;
+		line-height: 25px;
+	}
+}
+
+@mixin small-header(){
+	font-family: $font-basic;
+	font-size: 28px;
+	line-height: 35px;
+	font-weight: bold;
+
+	@media (max-width: $small-screen) {
+		font-size: 15px;
+		line-height: 20px;
+	}
+}
+
+
+
+
+@mixin bold-text(){
+	font-family: $font-basic;
+	font-size: 14px;
+	line-height: 19px;
+	font-weight: bold;
+
+	@media (max-width: $small-screen) {
+		font-size: 12px;
+	}
+}
+
+@mixin normal-text(){
+	font-family: $font-basic;
+	font-size: 14px;
+	line-height: 19px;
+	font-weight: normal;
+
+	@media (max-width: $small-screen) {
+		font-size: 12px;
+	}
+}
+
+
+
+
+@mixin text-label(){
+	font-family: $font-basic;
+	font-size: 14px;
+	line-height: 19px;
+	font-weight: bold;
+}
+
+@mixin text-label-uppercase(){
+	font-family: $font-basic;
+	font-size: 14px;
+	line-height: 19px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+
+
+@mixin small-text(){
+	font-family: $font-basic;
+	font-size: 12px;
+	line-height: 17px;
+	font-weight: normal;
+
+	@media (max-width: $small-screen) {
+		font-size: 10px;
+	}
+}
+
+@mixin small-text-uppercase(){
+	font-family: $font-basic;
+	font-size: 12px;
+	line-height: 17px;
+	font-weight: normal;
+	text-transform: uppercase;
+
+	@media (max-width: $small-screen) {
+		font-size: 10px;
+	}
+}
+
+@mixin small-text-bold(){
+	font-family: $font-basic;
+	font-size: 12px;
+	line-height: 17px;
+	font-weight: bold;
+
+	@media (max-width: $small-screen) {
+		font-size: 10px;
+	}
+}
+
+@mixin small-text-bold-uppercase(){
+	font-family: $font-basic;
+	font-size: 12px;
+	line-height: 17px;
+	font-weight: bold;
+	text-transform: uppercase;
+
+	@media (max-width: $small-screen) {
+		font-size: 10px;
+	}
+}
+
+
+
+h1{
+    @include large-header;
+}
+
+h2{
+    @include medium-header;
+}
+
+h3{
+    @include small-header;
+}
+
+p{
+    @include normal-text;
+}
+
+small{
+	@include small-text-uppercase;
+}
+
+
+
+.split-text{
+	p{
+		column-count: 2;
+		column-gap: 40px;
+	}
+}

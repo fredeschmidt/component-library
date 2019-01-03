@@ -1,0 +1,133 @@
+
+.filter{
+
+	.filter_buttons{
+
+		ul{
+			margin-left: 0px;
+		    padding-left: 0px;
+
+		    @media (max-width: $small-screen) {
+		        padding-left: 20px;
+		    }
+
+		    li{
+				display: inline-block;
+				margin-right: 15px;
+
+				label{
+					display: block;
+				    position: relative;
+				    left: 0px;
+				    padding-top: 4px;
+				    margin-bottom: 12px;
+				    cursor: pointer;
+				    user-select: none;
+
+				    transition: $transition-ease;
+
+				    @media (max-width: $small-screen) {
+				        display: inline-block;
+				    }
+
+				    &.btn--rounded{
+				    	opacity: 1;
+				    	height: 33px;
+				    	width: 100px;
+				    	font-size: 11px;
+				    	padding-top: 6px;
+				    	margin-top: 3px;
+				    	background-color: $color-3;
+
+				    	@media (max-width: $small-screen) {
+				    	    width: 80px;
+				    	}
+
+				    	&:hover{
+				    		transform: scale(1);
+				    	}
+				    }
+
+				    &.not-choosed{
+				    	opacity: 0.4;
+				    	transform: scale(0.95);
+
+				    	&:hover{
+				    		opacity: 0.6;
+				    	}
+				    }
+
+				    &.all-choosed{
+				    }
+
+				    input{
+				    	position: absolute;
+			    	    opacity: 0;
+			    	    cursor: pointer;
+				    }
+				}
+		    }
+		}
+	}
+
+
+
+
+
+
+
+
+	.filter_options{
+
+		a.filter_options_box{
+			width: 150px;
+		    height: 150px;
+
+		    background-color: $color-2;
+		    text-decoration: none;
+
+		    display: flex;
+		    flex-direction: column;
+		    justify-content: center;
+
+		    padding: 10px;
+		    transform: scale(1);
+		    transition: $transition-ease;
+
+		    margin-bottom: 20px;
+
+		    @media (max-width: $medium-screen) {
+		        width: 140px;
+		    	height: 140px;
+		    }
+
+		    &:hover{
+		    	transform: scale(1.03);
+		    }
+
+		    .filter_options_box_text{
+		    	@include text-label;
+		    	color: $color-3;
+		    	text-align: center;
+		    }
+
+		    .filter_options_box_icon{
+		    	text-align: right;
+
+		    	img{
+		    		height: 85px;
+		    	}
+		    }
+
+		    &.disabled{
+		    	opacity: 0.4;
+		    	background-color: $color-3;
+		    	pointer-events: none;
+
+		    	.filter_options_box_text{
+		    		color: $white;
+		    	}
+		    }
+		}
+	}
+}
