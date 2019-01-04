@@ -1,0 +1,145 @@
+
+
+
+/***************************
+
+	TRANSITIONS
+
+		Transitios used to animate between two states, a non-hover and a hover (or focus) state.
+		To use transitions in js, just add and remove classes and do the effects in css.
+
+
+
+	___propeties
+
+		transition-property: all;
+		transition-duration: 0.75s;
+		transition-delay: 0s;
+		transition-timing-function: cubic-bezier(.77,-0.7,.24,1.64);
+
+		.. or in single line
+		transition: [property] [duration] [delay] [timing-function];
+			
+		.. or two transitions in single line
+		transition: background 1s ease-out, border 0.5s linear;
+
+
+***************************/
+
+
+
+
+
+
+
+
+/***************************
+
+	ANIMATION 
+
+		While a transition will only occur when an element changes, animations can begin straight away.
+		Every animation needs to reference a set of keyframes.
+
+		.element {
+			animation: keyframe-name ...
+		}
+
+		@keyframes keyframe-name {
+			...
+		}
+
+
+	___propeties
+
+		animation-name: my-animation;
+		animation-duration: 4s;
+		animation-delay: 0s;
+		animation-play-state: paused; (use on hover to pause the animation - default is 'playing')
+		animation-timing-function: linear; (use linear here and specify with others in each keyframe)
+		animation-iteration-count: infinite; (default is once / number / infinite)
+		animation-direction: alternate; (normal / reverse / alternate / alternate-reverse)
+		
+		.. or in single line
+		animation: [keyframe-name] [duration] [delay] [play-state] [timing-function] [repeat] [direction];
+
+
+		@keyframes my-animation {
+			0% {
+				...
+				animation-timing-function: linear;
+			}
+			50% {
+				...
+				animation-timing-function: ease-out;
+			}
+		}
+
+
+
+	___examples
+
+		.. pause animation on hover
+		.element:hover {
+			animation-play-state: paused;
+		}
+
+***************************/
+
+
+
+
+
+
+
+
+
+
+/***************************
+
+	TRANSFORM
+
+		Creates great effects by adding different transform in each keyframe or state we animate.
+		Rotér elementer (scale / translate / rotate / skew - se muligheder i link)
+		https://www.w3schools.com/cssref/css3_pr_transform.asp
+
+
+
+	___propeties
+
+		transform: scale(); (making elements larger or smaller)
+		transform: translateZ (); (moves elements)
+		transform: rotateY (); (spin elements)
+
+		perspective: 800px; (tells the browser how “deep” the scene needs to be)
+		transform-style: preserve3d; (tells the browser that some 3D stuff on this divs children is going to happen)
+
+
+
+***************************/
+
+
+
+
+
+
+/***************************
+
+	WOW.JS
+
+		<div class="wow">...</div>
+		When the browser scrolls this content onto the screen, Wow.js will add “animated” to the class, like this:
+
+		<div class="wow animated">...</div>
+		If we had an animation on our div.animated elements, the animation would happen when this class is added.
+
+
+		The deafult style looks like this
+		.wow {
+		  opacity: 0;
+		  transition: all 0.5s 0.5s ease-out;
+		}
+		.animated {
+		  opacity: 1;
+		}
+
+***************************/

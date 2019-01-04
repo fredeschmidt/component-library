@@ -1,0 +1,164 @@
+
+
+$delay-none: 0s;
+$delay-fast: 0.2s;
+$delay-slow: 0.4s;
+
+$duration-fastest: 0.2s;
+$duration-faster: 0.4s;
+$duration-fast: 0.8s;
+$duration-slow: 1.2s;
+
+$transition-bounce: cubic-bezier(.5,.02,.5,1.35);
+$transition-wipe: cubic-bezier(.96,-0.26,.13,1.02);
+$transition-slide: cubic-bezier(.96,-0.26,.4,1.07);
+$transition-ease: ease-in-out;
+
+
+
+
+
+
+
+// WORKS ON LOAD
+
+// navigation menu
+.ani--inDown-fastSlide{
+    transition-property: all;
+    transition-delay: $delay-none;
+    transition-duration: $duration-fast;
+    transition-timing-function: $transition-slide;
+
+    transform: translateY(-100%);
+    top: -100%;
+    
+    &.mate{
+        transform: translateY(0);
+        top: 0; 
+    }
+}
+
+// content
+.ani--inUp-fastSlide{
+    transition-property: all;
+    transition-delay: $delay-none;
+    transition-duration: $duration-fast;
+    transition-timing-function: $transition-slide;
+
+    transform: translateY(50%);
+    top: 50%;
+    
+    &.mate{
+        transform: translateY(0);
+        top: 0; 
+    }
+}
+
+
+
+
+
+
+
+
+
+
+// WORKS ON ANCTION 
+
+// dropdown on click open
+.ani--moveUp-fastSlide{
+    transition-property: all;
+    transition-delay: $delay-none;
+    transition-duration: $duration-faster;
+    transition-timing-function: $transition-slide;
+
+    &.mate{
+        transform: translateY(-50%) !important;
+        top: -50px !important;
+    }
+}
+
+// button submit after choosed dropdown
+.ani--moveDownIn-fastFall{
+    opacity: 0;
+
+    &.mate{
+        animation-name: fastFall;
+        animation-delay: $delay-fast;
+        animation-duration: $duration-fastest;
+        animation-timing-function: cubic-bezier(.56,.36,.53,1.32);
+        animation-fill-mode: forwards;
+    }
+}
+
+@keyframes fastFall {
+    0%{
+        opacity: 1;
+        transform: translateY(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// WORKS WITH WOW / content on screen
+
+// projekter
+.ani--inUp-slowWipe-first{
+    transition-property: all;
+    transition-delay: $delay-none;
+    transition-duration: $duration-slow;
+    transition-timing-function: $transition-wipe;
+
+    transform: translateY(50%);
+    top: 50%;
+    
+    &.animated{
+        transform: translateY(0);
+        top: 0; 
+    }
+}
+
+.ani--inUp-slowWipe-second{
+    transition-property: all;
+    transition-delay: $delay-fast;
+    transition-duration: $duration-slow;
+    transition-timing-function: $transition-wipe;
+
+    transform: translateY(50%);
+    top: 50%;
+    
+    &.animated{
+        transform: translateY(0);
+        top: 0; 
+    }
+}
+
+.ani--inUp-slowWipe-third{
+    transition-property: all;
+    transition-delay: $delay-slow;
+    transition-duration: $duration-slow;
+    transition-timing-function: $transition-wipe;
+
+    transform: translateY(50%);
+    top: 50%;
+    
+    &.animated{
+        transform: translateY(0);
+        top: 0; 
+    }
+}
