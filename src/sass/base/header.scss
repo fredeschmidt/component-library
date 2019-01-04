@@ -1,0 +1,217 @@
+
+.header{
+    height: 80px;
+    width: 100%;
+    background-color: $white;
+
+    .header_content{
+
+        #menu-toggle{
+            height: calc(100vh + 50px);
+            display: block;
+            position: fixed;
+            top: 50px;
+            left: 50px;
+            z-index: 0;
+            -webkit-user-select: none;
+            user-select: none;
+
+            @media (max-width: $medium-screen) { 
+                position: absolute;
+                left: 20px;
+            }
+
+            input{
+                display: block;
+                width: 40px;
+                height: 30px;
+                position: absolute;
+                top: -7px;
+                left: -5px;
+                cursor: pointer;
+                opacity: 0; /* hide this */
+                z-index: 2; /* and place it over the hamburger */
+                -webkit-touch-callout: none;
+
+                &:checked ~ span{
+                    height: 1px;
+                    margin-bottom: 0px;
+                }
+
+                &:checked ~ span:nth-last-child(2){
+                    margin-bottom: 20px;
+                }
+
+                &:checked ~ ul{
+                    transform: none;
+                }
+            }
+
+            span{
+                display: block;
+                width: 40px;
+                height: 2px;
+                margin-bottom: 10px;
+                position: relative;
+                background: $color-2;
+                z-index: 1;
+                transition: $transition-ease;
+            }
+        }
+
+        #menu{
+            height: 100%;
+            width: 400px;
+            margin: -100px 0 0 -50px;
+            padding: 50px;
+            padding-left: 100px;
+            padding-top: 125px;
+            background: $black;
+            list-style-type: none;
+            -webkit-font-smoothing: antialiased;
+            position: absolute;
+            /* to stop flickering of text in safari */
+            transform-origin: 0% 0%;
+            transform: translate(-100%, 0);
+            transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+
+            @media (max-width: $medium-screen) { 
+                width: 450px;
+                padding-top: 140px;
+            }
+
+            a{
+                &:hover{
+                    text-decoration: none;
+                }
+            }
+
+            li{
+                padding: 5px 0;
+                color: $white; 
+                font-family: $font-basic; 
+                font-size: 18px;    
+                font-weight: bold;  
+                line-height: 50px;
+                opacity: 0.8;
+                transition: $transition-ease;
+
+                &:hover{
+                    opacity: 1;
+                }
+            }
+        }
+
+        #menu--submenu{
+            height: 100%;
+            width: 400px;
+            margin: -100px 0 0 -50px;
+            padding: 50px;
+            padding-left: 100px;
+            padding-top: 125px;
+            background: $color-3;
+            list-style-type: none;
+            -webkit-font-smoothing: antialiased;
+            position: absolute;
+            /* to stop flickering of text in safari */
+            transform-origin: 0% 0%;
+            transform: translate(-100%, 0);
+            transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+
+            @media (max-width: $medium-screen) { 
+                width: 450px;
+                padding-top: 140px;
+                padding-right: 100px;
+            }
+
+            li{
+                transition: $transition-ease;
+
+                .nav-link{
+                    padding: 0.2rem 0.5rem;
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    transition: $transition-ease;
+
+                    &.clicked{
+                        a{
+                            opacity: 1;
+                        }
+                        .has-submenu{
+                            i{
+                                opacity: 1;
+                            }
+                        }
+                    }
+
+                    &:hover{
+                        a{
+                            text-decoration: none;
+                            opacity: 1;
+                        }
+                        .has-submenu{
+                            i{
+                                opacity: 1;
+                            }
+                        }
+                    }
+
+                    a{
+                        color: $white; 
+                        font-family: $font-basic; 
+                        font-size: 18px;    
+                        font-weight: bold;  
+                        line-height: 50px;
+                        opacity: 0.8;
+                        transition: $transition-ease;
+                    }
+
+                    .has-submenu{
+                        padding-top: 5px;
+                        cursor: pointer;
+
+                        i{
+                            font-size: 15px;
+                            font-weight: light;
+                            opacity: 0.6;
+                            color: $white;
+                            top: 8px;
+                            position: relative;
+                            transition: $transition-ease;
+                        }
+                    }
+                }
+
+                .submenu{
+                    display: none;
+                    padding: 0.2rem 0.5rem;
+
+                    ul{
+                        -webkit-padding-start: 0px;
+                        li{
+                            a{
+                                color: $white; 
+                                font-family: $font-basic; 
+                                font-weight: bold;  
+                                opacity: 0.8;
+                                font-size: 15px;
+                                line-height: 37px;
+                                transition: $transition-ease;
+
+                                &.clicked{
+                                    opacity: 0.8;
+                                }
+
+                                &:hover{
+                                    opacity: 1;
+                                    text-decoration: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

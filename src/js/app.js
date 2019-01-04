@@ -20,6 +20,8 @@
 
 //=require vendor/ghost-typer.min.js
 
+//=require base/header.js
+
 //=require onClick/goBack.js
 
 //=require components/countdown--date.js
