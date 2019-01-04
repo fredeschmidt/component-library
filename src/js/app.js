@@ -29,5 +29,6 @@
 //=require components/searching.js
 //=require components/calender.js
 //=require components/carousel--split.js
+//=require components/carousel--cards.js
 //=require components/video.js
 //=require components/accordion.js
