@@ -1,24 +1,43 @@
 
 <!-- VIDEO -->
 
+<!-- vimeo -->
 <div class="media-article">
-    <div class="btn btn--play" data-toggle="modal" data-target="#article-video-1" data-iframe="iframe-1" onclick="sendCommandToPlayer('play', this.getAttribute('data-iframe'))">
-        <img src="assets/images/icons/play.svg" alt="play">
-    </div>
-    <img src="assets/images/demo/grey.png" alt="video" data-toggle="modal" data-target="#article-video-1">
-</div>  
+    <div class="media-article--video" data-animated>
 
-<!-- pop up article-video-1 -->
-<div class="modal fade" id="article-video-1" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <i class="icon-close"></i>
-            </button>
-
-            <iframe id="iframe-1" title="Videotool player" type="text/html" src="https://media.videotool.dk/?vn=246_2016051009415732995238289815" allowfullscreen="" frameborder="0"></iframe>
-
+        <div class="video video--js" data-vimeo-id="31241154">
+            <span>
+                <i class="fas fa-play"></i>
+            </span>
         </div>
+
+        <div class="video_content">
+            <h3>Lorem ipsum</h3>
+            <p>
+                ...
+            </p>
+        </div>
+
     </div>
-</div>
+</div> 
+
+
+<!-- youtube -->
+<!-- <div class="media-article">
+    <div class="media-article--video" data-animated>
+
+        <div class="video video--js" data-youtube-id="G1wsCworwWk">
+            <span>
+                <i class="fas fa-play"></i>
+            </span>
+        </div>
+
+        <div class="video_content">
+            <h3>Lorem ipsum</h3>
+            <p>
+                ...
+            </p>
+        </div>
+
+    </div>
+</div>  -->
