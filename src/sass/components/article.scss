@@ -135,44 +135,6 @@ article{
                     margin-left: -18px;
                 }
             }
-
-            &.listtype_links{
-                margin-bottom: 30px;
-                margin-left: 6px; /*aligner med teksten*/
-
-                @media (max-width: $medium-screen) {  
-                  margin-left: 7px;
-                }
-
-                li{
-                    list-style: none;
-                    &:before {
-                        content: none !important; 
-                    }
-
-                    i{
-                        color: $color-3;
-                        font-size: 18px;
-                        font-weight: bold;
-                        position: relative;
-                        top: 2px;
-                    }
-
-                    a{
-                        @include bold-text;
-                        color: $black;
-                        position: relative;
-                        padding-left: 5px;
-                        right: 0px;
-                        transition: $transition-ease;
-
-                        &:hover{
-                            right: -5px;
-                            text-decoration: none;
-                        }
-                    }
-                }
-            }
         }
 
         ol{
@@ -189,7 +151,28 @@ article{
                 padding-bottom: 10px;
             }
         }
-            
+
+
+        /*links*/
+        a{
+            &.arrow-link{
+                display: block;
+                span{
+                    color: $black;
+                }
+                i{
+                    color: $color-3;
+                }
+                &:hover{
+                    span{
+                        color: $black;
+                    }
+                    i{
+                        color: $color-3;
+                    }
+                }
+            }
+        }
 
         /*accordion*/
         .article_accordion {

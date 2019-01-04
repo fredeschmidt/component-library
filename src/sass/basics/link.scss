@@ -16,4 +16,59 @@ a{
 			text-decoration: none;
 		}
 	}
+
+	&.arrow-link{
+		span{
+			position: relative;
+			left: 0;
+
+			@include normal-text;
+			color: $white;
+			cursor: pointer;
+			transition: $transition-ease;
+		}
+
+		i{
+			color: $white;
+		}
+
+		&:hover{
+			text-decoration: none;
+			span{
+				left: 5px;
+				color: $white;
+			}
+			i{
+				color: $white;
+			}
+		}
+	}
 }
+
+
+a{
+	.arrow-link{
+		span{
+			position: relative;
+			left: 0;
+
+			@include normal-text;
+			color: $white;
+			cursor: pointer;
+			transition: $transition-ease;
+		}
+
+		i{
+			color: $white;
+		}
+	}
+
+	&:hover{
+		.arrow-link{
+			span{
+				left: 5px;
+			}	
+		}
+	}
+}
+

@@ -1,25 +1,14 @@
 
 .cards{
 	.card_list{
-		margin-left: 0px;
-		padding-left: 0px;
 
 		.card{
 			margin-bottom: 40px;
-			padding-bottom: 0px;
-		    list-style-type: disc;
-		    list-style: none;
-		    display: inline-block;
-		    vertical-align: top;
 		    cursor: pointer;
-
-			&:before {
-			    content: none; 
-			}
-
 
 			/*hover*/
 			a{
+				color: $white;
 				text-decoration: none;
 
 			    /*img billede*/
@@ -61,7 +50,7 @@
 							display: block;
 							width: 70px;
 							height: 3px;
-							background: #000;
+							background: $white;
 						}
 					}
 
@@ -75,7 +64,7 @@
 
 					.card_img {
 						&:after {
-				    		background-color: rgba(#000,.15);
+				    		background-color: rgba($black,.15);
 				    	}
 					}
 				}
